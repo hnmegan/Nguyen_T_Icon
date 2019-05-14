@@ -1,0 +1,6 @@
+(() => {
+
+// stub
+ 
+	consle.log('fired') 
+})();
