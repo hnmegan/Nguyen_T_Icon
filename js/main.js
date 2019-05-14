@@ -2,5 +2,5 @@
 
 // stub
  
-	consle.log('fired') 
+	consle.log('hello good morning') 
 })();
