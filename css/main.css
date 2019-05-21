@@ -42,3 +42,9 @@ body {
 	opacity: 1;
 	fill: white;
 }
+
+.selected { 
+  color:  #b385dc !important;  
+  text-transform: uppercase;
+  font-style: italic;
+  }
