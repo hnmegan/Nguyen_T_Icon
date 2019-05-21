@@ -8,10 +8,11 @@
 // And using a css selector to find the element we want to use
 
 // Let stores the reference to element as a variable ( in memory)
-	let svgGraphic = document.querySelector("#badgeSVG"),
-		mainHeadline = document.querySelector(".main-headline"),
+	let mainHeadline = document.querySelector(".main-headline"),
 		subHeadline = document.querySelector("h3"),
-		swapTextButton = document.querySelector(".switch-type");
+		swapTextButton = document.querySelector(".switch-type"),
+		allImages = document.querySelectorAll("#image-container img"),
+		objectButton = document.querySelector(".container button");
 
 	// functions are reusable pieces of code - put these between the variable and the event handling
 	// that you can run anytime
@@ -19,7 +20,7 @@
 	function logMyId() {
 		console.log(this.id);
 
-		this.style.opacity = 0.5;
+	//toggle a class here with classList???????????
 	}
 
 	function swapText(){
@@ -30,9 +31,22 @@
 		subHeadline.classList.toggle("selected");
 	}
 
+	function logTheSVG() {
+		console.log(this.previousElementSibling.id);
+	}
+
 	//events always go down here
 
-	svgGraphic.addEventListener("click", logMyId);
 	swapTextButton.addEventListener("click", swapText);
+
+	// select and loop through a bunch of items at once => one to many relationship
+	allImages.forEach(item => {
+		item.addEventListener("click", logMyId);
+	});
+
+	// the button beside the svg objectButton
+
+	objectButton.addEventListener("click", logTheSVG)
+
 
 })();
